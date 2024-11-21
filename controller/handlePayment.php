@@ -4,13 +4,13 @@
 
     // Check if user is logged in
     if (!isset($_SESSION['isLoggedIn'], $_SESSION['user_id']) || !$_SESSION['isLoggedIn']) {
-        header('Location: /Rental-Food-Court/login_user.php');
+        header('Location: /login_user.php');
         exit(); 
     }
 
     // Check if form is submitted
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: /Rental-Food-Court/user_transaction.php");
+        header("Location: /user_transaction.php");
         exit();
     }
 
@@ -41,6 +41,6 @@
     $sql_user = "UPDATE user SET balance = balance - $amount_paid WHERE user_id = $user_id";
     $user_result = mysqli_query($connection, $sql_user);
 
-    header('Location: /Rental-Food-Court/user_transaction.php?successMsg=Paid Successfully');
+    header('Location: /user_transaction.php?successMsg=Paid Successfully');
 
 ?>

@@ -3,12 +3,12 @@ require('../includes/connectDB.php');
 session_start();
 
 if (!isset($_SESSION['admin_id']) || !$_SESSION['isLoggedIn']) {
-    header('Location: /Rental-Food-Court/index.php');
+    header('Location: /index.php');
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: /Rental-Food-Court/admin_stall.php");
+    header("Location: /admin_stall.php");
     exit(); 
 }
 
@@ -21,8 +21,8 @@ $query = "UPDATE stall SET name='$name', price='$price', available='$available' 
 $result = mysqli_query($connection, $query);
 
 if ($result) {
-    header("Location: /Rental-Food-Court/admin_stall.php?successMsg=Stall updated successfully");
+    header("Location: /admin_stall.php?successMsg=Stall updated successfully");
 } else {
-    header("Location: /Rental-Food-Court/admin_stall.php?errorMsg=Failed to update stall");
+    header("Location: /admin_stall.php?errorMsg=Failed to update stall");
 }
 ?>

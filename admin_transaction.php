@@ -78,8 +78,8 @@
                         <td><?php echo htmlspecialchars($row['start_date']); ?></td>
                         <td><?php echo htmlspecialchars($row['transaction_date']); ?></td>
                         <td>
-                            <a href="/Rental-Food-Court/edit_transaction.php?transaction_id=<?php echo htmlspecialchars($row['transaction_id']); ?>" class="btn btn-primary btn-sm">Update</a>
-                            <a href="/Rental-Food-Court/controller/deleteTransaction.php?transaction_id=<?php echo htmlspecialchars($row['transaction_id']); ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="/edit_transaction.php?transaction_id=<?php echo htmlspecialchars($row['transaction_id']); ?>" class="btn btn-primary btn-sm">Update</a>
+                            <a href="/controller/deleteTransaction.php?transaction_id=<?php echo htmlspecialchars($row['transaction_id']); ?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
             <?php } } ?>

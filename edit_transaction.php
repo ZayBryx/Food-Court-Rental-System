@@ -6,11 +6,11 @@
     // session_start();
 
     // if(!(isset($_SESSION['admin_id']) || $_SESSION['isLoggedIn'])){
-    //     header('Location: /Rental-Food-Court/index.php');
+    //     header('Location: /index.php');
     // }
 
     if(!(isset($_GET['transaction_id']))){
-        header("Location: /Rental-Food-Court/dashboard.php?errorMsg=Undefine Stall Id");
+        header("Location: /dashboard.php?errorMsg=Undefine Stall Id");
     }
 
     $transaction_id = $_GET['transaction_id'];
@@ -29,7 +29,7 @@
 <main class="container mt-5">
     <h2 class="text-center mb-4">Edit Transaction</h2>
 
-    <form action="/Rental-Food-Court/controller/editTransaction.php?transaction_id=<?php echo $transaction_id; ?>" method="POST">
+    <form action="/controller/editTransaction.php?transaction_id=<?php echo $transaction_id; ?>" method="POST">
         <div class="mb-3">
             <label for="years_contract" class="form-label">Years Contract</label>
             <input type="text" class="form-control" id="years_contract" name="years_contract" value="<?php echo $transaction['years_contract']; ?>" required>

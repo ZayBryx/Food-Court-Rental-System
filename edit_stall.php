@@ -6,11 +6,11 @@
     // session_start();
 
     // if(!(isset($_SESSION['admin_id']) || $_SESSION['isLoggedIn'])){
-    //     header('Location: /Rental-Food-Court/index.php');
+    //     header('Location: /index.php');
     // }
 
     if(!(isset($_GET['stall_id']))){
-        header("Location: /Rental-Food-Court/dashboard.php?errorMsg=Undefine Stall Id");
+        header("Location: /dashboard.php?errorMsg=Undefine Stall Id");
     }
 
     $stall_id = $_GET['stall_id'];
@@ -19,7 +19,7 @@
     $result = mysqli_query($connection, $sql);
 
     if (mysqli_num_rows($result) === 0) {
-        header("Location: /Rental-Food-Court/admin_stall.php?errorMsg=Stall not found");
+        header("Location: /admin_stall.php?errorMsg=Stall not found");
         exit();
     }
 
@@ -31,7 +31,7 @@
     <h2 class="text-center mb-4">Edit Stall</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="/Rental-Food-Court/controller/editStall.php" method="POST">
+            <form action="/controller/editStall.php" method="POST">
                 <input type="hidden" name="stall_id" value="<?php echo $stall_id; ?>">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name:</label>

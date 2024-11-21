@@ -13,7 +13,7 @@
                 echo '<div class="alert alert-danger" role="alert">'. $_GET['errorMsg']. '</div>';
             }
             ?>
-            <form action="/Rental-Food-Court/controller/checkUser.php" method="POST">
+            <form action="/controller/checkUser.php" method="POST">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username:</label>
                     <input type="text" class="form-control" id="username" name="username" required>

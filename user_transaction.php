@@ -68,7 +68,7 @@
             <div class="modal-body">
                 <p>Are you sure you want to pay <?php echo $row['total_price'] ?> using your balance?</p>
                 <p>Your current balance: <?php echo $balance['amount_paid'] ?></p>
-                <form action="/Rental-Food-Court/controller/handlePayment.php?transaction_id=<?php echo $row['transaction_id'] ?>&total_price=<?php echo $row['total_price'] ?>" method="POST">
+                <form action="/controller/handlePayment.php?transaction_id=<?php echo $row['transaction_id'] ?>&total_price=<?php echo $row['total_price'] ?>" method="POST">
                     <div class="mb-3">
                         <label for="amount" class="form-label">Amount to Pay:</label>
                         <input type="number" class="form-control" id="amount" name="amount" max="<?php echo $row['balance'] ?>" step="100" required>

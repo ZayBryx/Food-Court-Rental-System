@@ -4,13 +4,13 @@ session_start();
 
 // Redirect to login page if user is not logged in
 if(!(isset($_SESSION['isLoggedIn'], $_SESSION['user_id']) && $_SESSION['isLoggedIn'])) {
-    header('Location: /Rental-Food-Court/login_user.php');
+    header('Location: /login_user.php');
     exit(); 
 }
 
 // Redirect to user profile page if form is not submitted
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: /Rental-Food-Court/user_profile.php");
+    header("Location: /user_profile.php");
     exit();
 }
 
@@ -25,7 +25,7 @@ $username = $_POST['username'] ?? '';
 
 // Validate form data
 if (empty($first_name) || empty($last_name) || empty($email)) {
-    header("Location: /Rental-Food-Court/user_profile.php?errorMsg=All fields are required");
+    header("Location: /user_profile.php?errorMsg=All fields are required");
     exit();
 }
 
@@ -35,8 +35,8 @@ $result = mysqli_query($connection, $query);
 
 // Check if update was successful
 if ($result) {
-    header("Location: /Rental-Food-Court/user_profile.php?successMsg=Profile updated successfully");
+    header("Location: /user_profile.php?successMsg=Profile updated successfully");
 } else {
-    header("Location: /Rental-Food-Court/user_profile.php?errorMsg=Failed to update profile");
+    header("Location: /user_profile.php?errorMsg=Failed to update profile");
 }
 ?>

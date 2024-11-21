@@ -4,13 +4,13 @@
 
     // Redirect to login page if user is not logged in
     if(!(isset($_SESSION['isLoggedIn'], $_SESSION['user_id']) && $_SESSION['isLoggedIn'])) {
-        header('Location: /Rental-Food-Court/login_user.php');
+        header('Location: /login_user.php');
         exit(); 
     }
     
     // Redirect to user profile page if form is not submitted
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: /Rental-Food-Court/user_profile.php");
+        header("Location: /user_profile.php");
         exit();
     }
 
@@ -18,7 +18,7 @@
     $amount = $_POST['amount'];
 
     if (empty($amount)) {
-        header("Location: /Rental-Food-Court/user_profile.php?errorMsg=Balance is required");
+        header("Location: /user_profile.php?errorMsg=Balance is required");
         exit();
     }
 
@@ -44,6 +44,6 @@
         exit();
     }
 
-    header("Location: /Rental-Food-Court/user_deposit.php?successMsg=Successfully deposit");
+    header("Location: /user_deposit.php?successMsg=Successfully deposit");
 
 ?>

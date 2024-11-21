@@ -24,7 +24,7 @@
             }
     ?>
             <p>Your current balance: <b><?php echo $balance; ?></b></p>
-            <form action="/Rental-Food-Court/controller/userDeposit.php" method="POST">
+            <form action="/controller/userDeposit.php" method="POST">
                 <div class="mb-3">
                     <label for="amount" class="form-label">Amount to Deposit</label>
                     <input type="text" class="form-control" id="amount" name="amount" required>

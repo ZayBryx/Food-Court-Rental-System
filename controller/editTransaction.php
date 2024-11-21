@@ -4,13 +4,13 @@
 
     // Check if user is logged in
     if (!isset($_SESSION['admin_id']) || !$_SESSION['isLoggedIn']) {
-        header('Location: /Rental-Food-Court/index.php');
+        header('Location: /index.php');
         exit(); 
     }
 
     // Check if transaction_id is provided
     if (!isset($_GET['transaction_id'])) {
-        header("Location: /Rental-Food-Court/dashboard.php?errorMsg=Undefined Transaction ID");
+        header("Location: /dashboard.php?errorMsg=Undefined Transaction ID");
         exit();
     }
 
@@ -21,7 +21,7 @@
     $result = mysqli_query($connection, $sql);
 
     if (!$result || mysqli_num_rows($result) == 0) {
-        header("Location: /Rental-Food-Court/admin_transaction.php?errorMsg=Transaction not found");
+        header("Location: /admin_transaction.php?errorMsg=Transaction not found");
         exit();
     }
 
@@ -42,11 +42,11 @@
 
         if ($update_result) {
             // Redirect back to admin dashboard with success message
-            header("Location: /Rental-Food-Court/admin_transaction.php?successMsg=Transaction updated successfully");
+            header("Location: /admin_transaction.php?successMsg=Transaction updated successfully");
             exit();
         } else {
             // Handle error if update fails
-            header("Location: /Rental-Food-Court/edit_transaction.php?transaction_id=$transaction_id&errorMsg=Failed to update transaction");
+            header("Location: /edit_transaction.php?transaction_id=$transaction_id&errorMsg=Failed to update transaction");
             exit();
         }
     }

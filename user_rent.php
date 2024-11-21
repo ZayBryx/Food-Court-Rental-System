@@ -42,7 +42,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/Rental-Food-Court/controller/processRent.php" method="POST">
+                <form action="/controller/processRent.php" method="POST">
                     <input type="hidden" name="stall_id" value="<?php echo $row['stall_id']; ?>">
                     <div class="mb-3">
                         <label for="start_date" class="form-label">Start Date:</label>

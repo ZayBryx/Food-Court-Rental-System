@@ -6,7 +6,7 @@
     // session_start();
 
     // if(!(isset($_SESSION['admin_id']) || $_SESSION['isLoggedIn'])){
-    //     header('Location: /Rental-Food-Court/index.php');
+    //     header('Location: /index.php');
     // }
 ?>
 
@@ -51,8 +51,8 @@
                 <td><?php echo $row['price']?></td>
                 <td><?php echo $row['available'] ? "Yes" : "No"?></td>
                 <td>
-                    <a href="/Rental-Food-Court/edit_stall.php?stall_id=<?php echo $row['stall_id']?>" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="/Rental-Food-Court/controller/deleteStall.php?stall_id=<?php echo $row['stall_id']?>" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="/edit_stall.php?stall_id=<?php echo $row['stall_id']?>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/controller/deleteStall.php?stall_id=<?php echo $row['stall_id']?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
 
@@ -71,7 +71,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/Rental-Food-Court/controller/addStall.php" method="post">
+                <form action="/controller/addStall.php" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Stall Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>

@@ -4,13 +4,13 @@
 
     // Check if user is logged in
     if (!isset($_SESSION['admin_id']) || !$_SESSION['isLoggedIn']) {
-        header('Location: /Rental-Food-Court/login_admin.php');
+        header('Location: /login_admin.php');
         exit(); 
     }
 
     // Check if transaction_id is provided
     if (!isset($_GET['transaction_id'])) {
-        header("Location: /Rental-Food-Court/admin_transaction.php?errorMsg=Transaction ID is missing");
+        header("Location: /admin_transaction.php?errorMsg=Transaction ID is missing");
         exit();
     }
 
@@ -25,10 +25,10 @@
 
     if (!$result) {
         // Handle error if deletion fails
-        header("Location: /Rental-Food-Court/admin_transaction.php?errorMsg=Failed to delete transaction");
+        header("Location: /admin_transaction.php?errorMsg=Failed to delete transaction");
         exit();
     }
 
     // Redirect to admin transactions page with success message
-    header("Location: /Rental-Food-Court/admin_transaction.php?successMsg=Transaction deleted successfully");
+    header("Location: /admin_transaction.php?successMsg=Transaction deleted successfully");
 ?>

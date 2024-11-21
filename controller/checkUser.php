@@ -3,7 +3,7 @@
 
     // Check if form is not submitted
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: /Rental-Food-Court/index.php");
+        header("Location: /index.php");
         exit();
     }
 
@@ -13,7 +13,7 @@
 
     // Validation: Check if username and password are provided
     if (empty($username) || empty($password)) {
-        header("Location: /Rental-Food-Court/index.php?errorMsg=Please provide both username and password");
+        header("Location: /index.php?errorMsg=Please provide both username and password");
         exit();
     }
 
@@ -32,10 +32,10 @@
         $_SESSION['user_id'] = $user_data['user_id'];
         $_SESSION['first_name'] = $user_data['first_name'];
 
-        header("Location: /Rental-Food-Court/user_rent.php");
+        header("Location: /user_rent.php");
         exit();
     } else {
-        header("Location: /Rental-Food-Court/index.php?errorMsg=Invalid username or password");
+        header("Location: /index.php?errorMsg=Invalid username or password");
         exit();
     }
 ?>

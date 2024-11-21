@@ -37,7 +37,7 @@
                         <li class="list-group-item"><b>Username: </b><?php echo $row['username'] ?></li>
                     </ul>
                     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
-                    <a href="/Rental-Food-Court/controller/logout.php" class="btn btn-danger mt-3">Logout</a>
+                    <a href="/controller/logout.php" class="btn btn-danger mt-3">Logout</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/Rental-Food-Court/controller/updateUser.php" method="post">
+                <form action="/controller/updateUser.php" method="post">
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
                         <input type="text" class="form-control" name="first_name" id="first_name" value="<?php echo $row['first_name'] ?>">

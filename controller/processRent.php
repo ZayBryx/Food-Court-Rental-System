@@ -3,17 +3,17 @@
     require('../includes/connectDB.php');
 
     if(!(isset($_SESSION['isLoggedIn'], $_SESSION['user_id']) && $_SESSION['isLoggedIn'])) {
-        header('Location: /Rental-Food-Court/login_user.php');
+        header('Location: /login_user.php');
         exit(); 
     }
 
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        header("Location: /Rental-Food-Court/user_transaction.php");
+        header("Location: /user_transaction.php");
         exit();
     }
 
     if(empty($_POST['start_date']) || empty($_POST['years']) || empty($_POST['payment_method']) || empty($_POST['stall_id'])) {
-        header("Location: /Rental-Food-Court/user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=All fields are required");
+        header("Location: /user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=All fields are required");
         exit();
     }
 
@@ -33,7 +33,7 @@
     $result_stall = mysqli_query($connection, $sql_stall);
 
     if(!$result_stall || mysqli_num_rows($result_stall) === 0) {
-        header("Location: /Rental-Food-Court/user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=Stall not found");
+        header("Location: /user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=Stall not found");
         exit();
     }
 
@@ -46,9 +46,9 @@
     $result_insert = mysqli_query($connection, $sql_insert);
 
     if(!$result_insert) {
-        header("Location: /Rental-Food-Court/user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=Failed to rent stall");
+        header("Location: /user_transaction.php?stall_id={$_POST['stall_id']}&errorMsg=Failed to rent stall");
         exit();
     }
 
-    header("Location: /Rental-Food-Court/user_transaction.php?successMsg=Stall rented successfully");
+    header("Location: /user_transaction.php?successMsg=Stall rented successfully");
 ?>
